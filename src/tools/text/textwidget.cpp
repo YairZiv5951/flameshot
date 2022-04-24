@@ -2,6 +2,7 @@
 // SPDX-FileCopyrightText: 2017-2019 Alejandro Sirgo Rica & Contributors
 
 #include "textwidget.h"
+#include <iostream>
 
 TextWidget::TextWidget(QWidget* parent)
   : QTextEdit(parent)
@@ -41,6 +42,7 @@ void TextWidget::setFont(const QFont& f)
 
 void TextWidget::setAlignment(Qt::AlignmentFlag alignment)
 {
+    QTextEdit::setFontItalic(alignment == Qt::AlignRight);
     QTextEdit::setAlignment(alignment);
     adjustSize();
 }
